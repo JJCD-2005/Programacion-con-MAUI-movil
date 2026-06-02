@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClimaAppMAUI.MainPage">
+
+    <VerticalStackLayout Spacing="15" Padding="20">
+        <Label Text="CLIMA ACTUAL"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Label Text="{Binding Condition}"
+               FontSize="24"
+               HorizontalOptions="Center"/>
+
+        <Grid ColumnDefinitions="*,*">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Temperatura" FontSize="14"/>
+                <Label Text="{Binding Temperature, StringFormat='{0:F1}°C'}"
+                       FontSize="32"
+                       FontAttributes="Bold"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Humedad" FontSize="14"/>
+                <Label Text="{Binding Humidity, StringFormat='{0}%'}"
+                       FontSize="32"
+                       FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <Button Text="Actualizar Clima"
+                Clicked="OnActualizarClicked"
+                BackgroundColor="Orange"
+                TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>

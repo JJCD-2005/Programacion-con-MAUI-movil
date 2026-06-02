@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculadoraMAUI.MainPage"
+             BackgroundColor="#1C1C1E">
+
+    <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Pantalla de la calculadora -->
+        <Label x:Name="resultLabel" 
+               Text="0" 
+               TextColor="White"
+               FontSize="64" 
+               HorizontalTextAlignment="End" 
+               VerticalTextAlignment="End"
+               Grid.Row="0" Grid.ColumnSpan="4" 
+               Padding="10" />
+
+        <!-- Fila 1: Botón de limpiar y división -->
+        <Button Text="C" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#A5A5A5" TextColor="Black" FontSize="24" Clicked="OnClearClicked"/>
+        <Button Text="÷" Grid.Row="1" Grid.Column="3" BackgroundColor="#FF9F0A" TextColor="White" FontSize="24" Clicked="OnOperatorClicked"/>
+
+        <!-- Fila 2: 7, 8, 9 y Multiplicar -->
+        <Button Text="7" Grid.Row="2" Grid.Column="0" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="8" Grid.Row="2" Grid.Column="1" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="9" Grid.Row="2" Grid.Column="2" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="×" Grid.Row="2" Grid.Column="3" BackgroundColor="#FF9F0A" TextColor="White" FontSize="24" Clicked="OnOperatorClicked"/>
+
+        <!-- Fila 3: 4, 5, 6 y Restar -->
+        <Button Text="4" Grid.Row="3" Grid.Column="0" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="5" Grid.Row="3" Grid.Column="1" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="6" Grid.Row="3" Grid.Column="2" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="-" Grid.Row="3" Grid.Column="3" BackgroundColor="#FF9F0A" TextColor="White" FontSize="24" Clicked="OnOperatorClicked"/>
+
+        <!-- Fila 4: 1, 2, 3 y Sumar -->
+        <Button Text="1" Grid.Row="4" Grid.Column="0" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="2" Grid.Row="4" Grid.Column="1" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="3" Grid.Row="4" Grid.Column="2" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="+" Grid.Row="4" Grid.Column="3" BackgroundColor="#FF9F0A" TextColor="White" FontSize="24" Clicked="OnOperatorClicked"/>
+
+        <!-- Fila 5: El cero largo y el Igual -->
+        <Button Text="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#333333" TextColor="White" FontSize="24" Clicked="OnNumberClicked"/>
+        <Button Text="=" Grid.Row="5" Grid.Column="3" BackgroundColor="#FF9F0A" TextColor="White" FontSize="24" Clicked="OnCalculateClicked"/>
+    </Grid>
+</ContentPage>
